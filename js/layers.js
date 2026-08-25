@@ -20,14 +20,14 @@ addLayer("d", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 0 // Row the layer is in on the tree (0 is the first row)
-    hotkeys: [
-        {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
-    ],
     upgrades: {
         11: {
 
         },
     },
+    row: 0 // Row the layer is in on the tree (0 is the first row)
+    hotkeys: [
+        {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
     layerShown(){return true},
 })
