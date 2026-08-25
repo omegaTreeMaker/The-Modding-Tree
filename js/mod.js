@@ -1,6 +1,6 @@
 let modInfo = {
-	name: "The ??? Tree",
-	author: "nobody",
+	name: "Degredation Tree",
+	author: "omegaTreeMaker",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
@@ -13,13 +13,13 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "Literally nothing",
+	name: "degredation's start",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		- Added points.<br>
+		- Added descension.`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
