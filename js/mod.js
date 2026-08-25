@@ -76,3 +76,7 @@ function maxTickLength() {
 // you can cap their current resources with this.
 function fixOldSave(oldVersion){
 }
+
+layers: [
+    "p", // Make sure your layer ID is listed here!
+]
