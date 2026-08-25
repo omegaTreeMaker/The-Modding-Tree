@@ -23,7 +23,7 @@ addLayer("d", {
     row: 0 // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "d, description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
-    ],
+    ]
     //layerShown(){return true},
     //upgrades: {
     //    11: {
