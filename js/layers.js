@@ -58,22 +58,22 @@ addLayer("d", {
                 17: {
                 title: "doubler^2",
                 description: "x2 point gain.",
-                cost: new Decimal(500),
+                cost: new Decimal(1000),
         },
                 18: {
                 title: "doubler^3",
                 description: "x2 point gain.",
-                cost: new Decimal(600),
+                cost: new Decimal(1800),
         },
                 19: {
                 title: "doubler^4",
                 description: "x2 point gain.",
-                cost: new Decimal(800),
+                cost: new Decimal(2500),
         },
-                110: {
+                20: {
                 title: "doubler^5",
                 description: "x2 point gain.",
-                cost: new Decimal(1100),
+                cost: new Decimal(3300),
         },
     },
     row: 0, 
