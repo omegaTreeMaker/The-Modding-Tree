@@ -1,5 +1,5 @@
 let modInfo = {
-	name: "Degredation Tree",
+	name: "Degradation Tree",
 	author: "omegaTreeMaker",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
@@ -13,7 +13,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "degredation's start",
+	name: "degradation's start",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
