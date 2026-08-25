@@ -70,7 +70,7 @@ addLayer("d", {
                 description: "x2 point gain.",
                 cost: new Decimal(800),
         },
-                20: {
+                110: {
                 title: "doubler^5",
                 description: "x2 point gain.",
                 cost: new Decimal(1100),
