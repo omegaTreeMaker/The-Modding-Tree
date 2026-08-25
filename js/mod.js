@@ -77,6 +77,3 @@ function maxTickLength() {
 function fixOldSave(oldVersion){
 }
 
-layers: [
-    "p", // Make sure your layer ID is listed here!
-]
