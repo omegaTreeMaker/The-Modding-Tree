@@ -35,6 +35,16 @@ addLayer("d", {
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
         },
+                13: {
+                title: "tripler",
+                description: "x3 point gain.",
+                cost: new Decimal(25),
+        },
+                14: {
+                title: "tripler^2",
+                description: "x3 point gain.",
+                cost: new Decimal(110),
+        },
     },
     row: 0, 
     hotkeys: [
