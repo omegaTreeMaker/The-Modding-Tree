@@ -29,7 +29,7 @@ addLayer("d", {
         12: {
                 title: "increaser",
                 description: "descension points boosts points.",
-                cost: new Decimal(8),
+                cost: new Decimal(10),
                     effect() {
         return player[this.layer].points.add(1).pow(0.5)
     },
@@ -38,12 +38,12 @@ addLayer("d", {
                 13: {
                 title: "tripler",
                 description: "x3 point gain.",
-                cost: new Decimal(25),
+                cost: new Decimal(125),
         },
                 14: {
                 title: "tripler^2",
                 description: "x3 point gain.",
-                cost: new Decimal(110),
+                cost: new Decimal(350),
         },
     },
     row: 0, 
