@@ -23,8 +23,8 @@ addLayer("d", {
         upgrades: {
         11: {
                 title: "doubler1",
-    description: "x2 point gain.",
-    cost: new Decimal(1),
+                description: "x2 point gain.",
+                cost: new Decimal(1),
         },
     },
     row: 0, 
