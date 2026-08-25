@@ -50,6 +50,31 @@ addLayer("d", {
                 description: "x10 point gain.",
                 cost: new Decimal(100),
         },
+                16: {
+                title: "another tenfold",
+                description: "x10 point gain.",
+                cost: new Decimal(200),
+        },
+                17: {
+                title: "doubler^2",
+                description: "x2 point gain.",
+                cost: new Decimal(500),
+        },
+                18: {
+                title: "doubler^3",
+                description: "x2 point gain.",
+                cost: new Decimal(600),
+        },
+                19: {
+                title: "doubler^4",
+                description: "x2 point gain.",
+                cost: new Decimal(800),
+        },
+                20: {
+                title: "doubler^5",
+                description: "x2 point gain.",
+                cost: new Decimal(1100),
+        },
     },
     row: 0, 
     hotkeys: [
