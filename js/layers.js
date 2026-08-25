@@ -20,6 +20,11 @@ addLayer("d", {
     gainExp() { 
         return new Decimal(1);
     },
+        upgrades: {
+        11: {
+
+        },
+    },
     row: 0, 
     hotkeys: [
         {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
