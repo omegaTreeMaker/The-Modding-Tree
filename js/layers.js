@@ -12,7 +12,7 @@ addLayer("d", {
     baseResource: "points", 
     baseAmount() { return player.points }, 
     type: "normal", 
-    exponent: 0.15, 
+    exponent: 0.6, 
     gainMult() { 
         let mult = new Decimal(1); // Added "let" here
         return mult;
@@ -22,8 +22,13 @@ addLayer("d", {
     },
         upgrades: {
         11: {
-                title: "doubler1",
+                title: "doubler",
                 description: "x2 point gain.",
+                cost: new Decimal(1),
+        },
+        12: {
+                title: "increaser",
+                description: "descension give more point.",
                 cost: new Decimal(1),
         },
     },
