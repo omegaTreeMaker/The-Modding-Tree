@@ -43,7 +43,7 @@ addLayer("d", {
                 14: {
                 title: "tripler^2",
                 description: "x3 point gain.",
-                cost: new Decimal(350),
+                cost: new Decimal(575),
         },
     },
     row: 0, 
