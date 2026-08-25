@@ -24,10 +24,10 @@ addLayer("d", {
     hotkeys: [
         {key: "d, description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){return true},
-    upgrades: {
+        upgrades: {
         11: {
 
         },
-    }
+    },
+    layerShown(){return true},
 })
