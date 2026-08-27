@@ -78,21 +78,21 @@ addLayer("d", {
                 112: {
                 title: "synergetically",
                 description: "points boosts points",
-                cost: new Decimal(39876),
+                cost: new Decimal(44444),
                     effect() {
-        return player[start.layer].points.add(1).pow(0.1)
+        return player.points.add(1).pow(0.1)
     },
     effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-        },
+       },
                 113: {
                 title: "tripler^3",
                 description: "x3 point gain.",
-                cost: new Decimal("1.25e5"),
+                cost: new Decimal("1.75e5"),
         },
                 114: {
                 title: "tripler^4",
                 description: "x3 point gain.",
-                cost: new Decimal("4e5"),
+                cost: new Decimal("7e5"),
         },
                 115: {
                 title: "one more tenfold",
