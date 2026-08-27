@@ -17,6 +17,7 @@ addLayer("d", {
         let mult = new Decimal(1); // Added "let" here
         if hasMilestone("b",0) mult = mult.times(2)
         if hasMilestone("b",1) mult = mult.times(1.5)
+
         return mult;
     },
     gainExp() { 
