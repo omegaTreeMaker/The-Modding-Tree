@@ -127,7 +127,7 @@ addLayer("d", {
                 121: {
                 title: "variation5",
                 description: "x2.39 point gain.",
-                cost: new Decimal("7e8"),
+                cost: new Decimal("6.7e8"),
         },
     },
     row: 0, 
