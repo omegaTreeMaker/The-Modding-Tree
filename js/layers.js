@@ -131,6 +131,11 @@ addLayer("d", {
                 description: "x2.39 point gain.",
                 cost: new Decimal("6.7e8"),
         },
+                122 {
+                title: "just one more tenfold before the big reset",
+                description: "x10 point gain.",
+                cost: new Decimal("6.7e8"),
+        },
     },
     row: 0, 
     hotkeys: [
@@ -149,7 +154,7 @@ addLayer("b", {
         points: new Decimal(0),
     }},
     color: "#84ff6b",
-    requires: new Decimal(10), 
+    requires: new Decimal(1e10), 
     resource: "bolts", 
     baseResource: "descension points", 
     baseAmount() { return player.points }, 
