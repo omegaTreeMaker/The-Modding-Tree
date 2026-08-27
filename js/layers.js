@@ -102,32 +102,32 @@ addLayer("d", {
                 116: {
                 title: "variation",
                 description: "x2.1 point gain.",
-                cost: new Decimal("3e7"),
+                cost: new Decimal("2.5e7"),
         },
                 117: {
                 title: "variation2",
                 description: "x2.75 point gain.",
-                cost: new Decimal("8.9e7"),
+                cost: new Decimal("4.9e7"),
         },
                 118: {
                 title: "variation3",
                 description: "x2.47 point gain.",
-                cost: new Decimal("3e8"),
+                cost: new Decimal("8.8e7"),
         },
                 119: {
                 title: "tripler^5",
                 description: "x3 point gain.",
-                cost: new Decimal("8.88e8"),
+                cost: new Decimal("1.6e8"),
         },
                 120: {
                 title: "variation4",
                 description: "x2.56 point gain.",
-                cost: new Decimal("4.2e9"),
+                cost: new Decimal("3.69e8"),
         },
                 121: {
                 title: "variation5",
                 description: "x2.39 point gain.",
-                cost: new Decimal("1.45e10"),
+                cost: new Decimal("7e8"),
         },
     },
     row: 0, 
