@@ -15,6 +15,8 @@ addLayer("d", {
     exponent: 0.6, 
     gainMult() { 
         let mult = new Decimal(1); // Added "let" here
+        if hasMilestone("b",0) mult = mult.times(2)
+        if hasMilestone("b",1) mult = mult.times(1.5)
         return mult;
     },
     gainExp() { 
@@ -135,4 +137,48 @@ addLayer("d", {
         {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){ return true }
+})
+
+
+addLayer("b", {
+    name: "bolt", 
+    symbol: "B", 
+    position: 0, 
+    startData() { return {
+        unlocked: true,
+        points: new Decimal(0),
+    }},
+    color: "#84ff6b",
+    requires: new Decimal(10), 
+    resource: "bolts", 
+    baseResource: "descension points", 
+    baseAmount() { return player.points }, 
+    type: "normal", 
+    exponent: 0.4, 
+    gainMult() { 
+        let mult = new Decimal(1); // Added "let" here
+        return mult;
+    },
+    gainExp() { 
+        return new Decimal(1);
+    },
+    row: 1, 
+    hotkeys: [
+        {key: "b", description: "B: Reset for bolts", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){ return true }
+    milestones: {
+    0: {
+        requirementDescription: "1 bolts",
+        effectDescription: "x2 descension points",
+        done() { return player.b.points.gte(1) }
+    }
+    1: {
+        requirementDescription: "11 bolts",
+        effectDescription: "x2.5 points, x1.5 descension points",
+        done() { return player.b.points.gte(11) }
+    }
+    etc
+}
+milestonePopups: false
 })
