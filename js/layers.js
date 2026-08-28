@@ -185,5 +185,5 @@ addLayer("b", {
             done() { return player[this.layer].points.gte(69); }
         },
     },
-    //milestonePopups: false
+    milestonePopups: false
 });
