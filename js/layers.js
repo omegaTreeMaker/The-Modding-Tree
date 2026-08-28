@@ -14,136 +14,136 @@ addLayer("d", {
     type: "normal", 
     exponent: 0.6, 
     gainMult() { 
-        let mult = new Decimal(1); // Added "let" here
-        if hasMilestone("b",0) mult = mult.times(2)
-        if hasMilestone("b",1) mult = mult.times(1.5)
+        let mult = new Decimal(1);
+        if (hasMilestone("b", 0)) mult = mult.times(2);
+        if (hasMilestone("b", 1)) mult = mult.times(1.5);
 
         return mult;
     },
     gainExp() { 
         return new Decimal(1);
     },
-        upgrades: {
+    upgrades: {
         11: {
-                title: "doubler",
-                description: "x2 point gain.",
-                cost: new Decimal(1),
+            title: "doubler",
+            description: "x2 point gain.",
+            cost: new Decimal(1),
         },
         12: {
-                title: "increaser",
-                description: "descension points boosts points.",
-                cost: new Decimal(10),
-                    effect() {
-        return player[this.layer].points.add(1).pow(0.5)
-    },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
+            title: "increaser",
+            description: "descension points boosts points.",
+            cost: new Decimal(10),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.5);
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"; },
         },
-                13: {
-                title: "tripler",
-                description: "x3 point gain.",
-                cost: new Decimal(30),
+        13: {
+            title: "tripler",
+            description: "x3 point gain.",
+            cost: new Decimal(30),
         },
-                14: {
-                title: "tripler^2",
-                description: "x3 point gain.",
-                cost: new Decimal(50),
+        14: {
+            title: "tripler^2",
+            description: "x3 point gain.",
+            cost: new Decimal(50),
         },
-                15: {
-                title: "tenfold",
-                description: "x10 point gain.",
-                cost: new Decimal(100),
+        15: {
+            title: "tenfold",
+            description: "x10 point gain.",
+            cost: new Decimal(100),
         },
-                16: {
-                title: "another tenfold",
-                description: "x10 point gain.",
-                cost: new Decimal(200),
+        16: {
+            title: "another tenfold",
+            description: "x10 point gain.",
+            cost: new Decimal(200),
         },
-                17: {
-                title: "doubler^2",
-                description: "x2 point gain.",
-                cost: new Decimal(1000),
+        17: {
+            title: "doubler^2",
+            description: "x2 point gain.",
+            cost: new Decimal(1000),
         },
-                18: {
-                title: "doubler^3",
-                description: "x2 point gain.",
-                cost: new Decimal(2000),
+        18: {
+            title: "doubler^3",
+            description: "x2 point gain.",
+            cost: new Decimal(2000),
         },
-                19: {
-                title: "doubler^4",
-                description: "x2 point gain.",
-                cost: new Decimal(3500),
+        19: {
+            title: "doubler^4",
+            description: "x2 point gain.",
+            cost: new Decimal(3500),
         },
-                111: {
-                title: "doubler.5",
-                description: "x2.5 point gain.",
-                cost: new Decimal(15000),
+        111: {
+            title: "doubler.5",
+            description: "x2.5 point gain.",
+            cost: new Decimal(15000),
         },
-                112: {
-                title: "synergetically",
-                description: "points boosts points",
-                cost: new Decimal(44444),
-                    effect() {
-        return player.points.add(1).pow(0.1)
-    },
-    effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x" }, // Add formatting to the effect
-       },
-                113: {
-                title: "tripler^3",
-                description: "x3 point gain.",
-                cost: new Decimal("1.75e5"),
+        112: {
+            title: "synergetically",
+            description: "points boosts points",
+            cost: new Decimal(44444),
+            effect() {
+                return player.points.add(1).pow(0.1);
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"; },
         },
-                114: {
-                title: "tripler^4",
-                description: "x3 point gain.",
-                cost: new Decimal("7e5"),
+        113: {
+            title: "tripler^3",
+            description: "x3 point gain.",
+            cost: new Decimal("1.75e5"),
         },
-                115: {
-                title: "one more tenfold",
-                description: "x10 point gain.",
-                cost: new Decimal("2.5e6"),
+        114: {
+            title: "tripler^4",
+            description: "x3 point gain.",
+            cost: new Decimal("7e5"),
         },
-                116: {
-                title: "variation",
-                description: "x2.1 point gain.",
-                cost: new Decimal("2.5e7"),
+        115: {
+            title: "one more tenfold",
+            description: "x10 point gain.",
+            cost: new Decimal("2.5e6"),
         },
-                117: {
-                title: "variation2",
-                description: "x2.75 point gain.",
-                cost: new Decimal("4.9e7"),
+        116: {
+            title: "variation",
+            description: "x2.1 point gain.",
+            cost: new Decimal("2.5e7"),
         },
-                118: {
-                title: "variation3",
-                description: "x2.47 point gain.",
-                cost: new Decimal("8.8e7"),
+        117: {
+            title: "variation2",
+            description: "x2.75 point gain.",
+            cost: new Decimal("4.9e7"),
         },
-                119: {
-                title: "tripler^5",
-                description: "x3 point gain.",
-                cost: new Decimal("1.6e8"),
+        118: {
+            title: "variation3",
+            description: "x2.47 point gain.",
+            cost: new Decimal("8.8e7"),
         },
-                120: {
-                title: "variation4",
-                description: "x2.56 point gain.",
-                cost: new Decimal("3.69e8"),
+        119: {
+            title: "tripler^5",
+            description: "x3 point gain.",
+            cost: new Decimal("1.6e8"),
         },
-                121: {
-                title: "variation5",
-                description: "x2.39 point gain.",
-                cost: new Decimal("6.7e8"),
+        120: {
+            title: "variation4",
+            description: "x2.56 point gain.",
+            cost: new Decimal("3.69e8"),
         },
-                122: {
-                title: "just one more tenfold before the big reset",
-                description: "x10 point gain.",
-                cost: new Decimal("8.7e8"),
+        121: {
+            title: "variation5",
+            description: "x2.39 point gain.",
+            cost: new Decimal("6.7e8"),
+        },
+        122: { // Added the missing colon here
+            title: "just one more tenfold before the big reset",
+            description: "x10 point gain.",
+            cost: new Decimal("8.7e8"),
         },
     },
     row: 0, 
     hotkeys: [
         {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){ return true }
-}),
+    layerShown(){ return true; }
+});
 
 
 addLayer("b", {
@@ -162,7 +162,7 @@ addLayer("b", {
     type: "normal", 
     exponent: 0.4, 
     gainMult() { 
-        let mult = new Decimal(1); // Added "let" here
+        let mult = new Decimal(1); 
         return mult;
     },
     gainExp() { 
@@ -172,19 +172,18 @@ addLayer("b", {
     hotkeys: [
         {key: "b", description: "B: Reset for bolts", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){ return true }
-    milestones: {
+    layerShown(){ return true; },
+    milestones: { // Moved milestones inside the addLayer object definition
         0: {
-                requirementDescription: "1 bolts",
-                effectDescription: "x2 descension points",
-                done() { return player[this.layer].points.gte(1) }
+            requirementDescription: "1 bolts",
+            effectDescription: "x2 descension points",
+            done() { return player[this.layer].points.gte(1); }
         },
         1: {
-                requirementDescription: "11 bolts",
-                effectDescription: "x2.5 points, x1.5 descension points",
-                done() { return player[this.layer].points.gte(11) }
+            requirementDescription: "11 bolts",
+            effectDescription: "x2.5 points, x1.5 descension points",
+            done() { return player[this.layer].points.gte(11); }
         },
-
-        },
-milestonePopups: false
-})
+    },
+    milestonePopups: false
+});
