@@ -158,7 +158,7 @@ addLayer("b", {
     requires: new Decimal(1e10), 
     resource: "bolts", 
     baseResource: "descension points", 
-    baseAmount() { return player.D.points }, 
+    baseAmount() { return player.descension.points}, 
     type: "normal", 
     exponent: 0.4, 
     gainMult() { 
