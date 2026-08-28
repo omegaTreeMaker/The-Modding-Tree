@@ -172,7 +172,7 @@ addLayer("b", {
     hotkeys: [
         {key: "b", description: "B: Reset for bolts", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){ return true; } // Removed trailing comma here that caused parsing issues
+    layerShown(){ return true; },
     milestones: {
         0: {
             requirementDescription: "100 bolts",
