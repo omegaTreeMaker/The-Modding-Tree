@@ -158,7 +158,7 @@ addLayer("b", {
     requires: new Decimal(1e10), 
     resource: "bolts", 
     baseResource: "descension points", 
-    baseAmount() { return player.points }, 
+    baseAmount() { return player.D.points }, 
     type: "normal", 
     exponent: 0.4, 
     gainMult() { 
@@ -175,14 +175,14 @@ addLayer("b", {
     layerShown(){ return true; },
     milestones: { // Moved milestones inside the addLayer object definition
         0: {
-            requirementDescription: "1 bolts",
+            requirementDescription: "100 bolts",
             effectDescription: "x2 descension points",
             done() { return player[this.layer].points.gte(1); }
         },
         1: {
-            requirementDescription: "11 bolts",
+            requirementDescription: "10k bolts",
             effectDescription: "x2.5 points, x1.5 descension points",
-            done() { return player[this.layer].points.gte(11); }
+            done() { return player[this.layer].points.gte("1e4"); }
         },
     },
     milestonePopups: false
