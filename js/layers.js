@@ -135,7 +135,7 @@ addLayer("d", {
                 122 {
                 title: "just one more tenfold before the big reset",
                 description: "x10 point gain.",
-                cost: new Decimal("6.7e8"),
+                cost: new Decimal("8.7e8"),
         },
     },
     row: 0, 
@@ -143,7 +143,7 @@ addLayer("d", {
         {key: "d", description: "D: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
     layerShown(){ return true }
-})
+}),
 
 
 addLayer("b", {
@@ -178,13 +178,13 @@ addLayer("b", {
         requirementDescription: "1 bolts",
         effectDescription: "x2 descension points",
         done() { return player[this.layer].points.gte(1) }
-    }
+    },
     1: {
         requirementDescription: "11 bolts",
         effectDescription: "x2.5 points, x1.5 descension points",
         done() { return player[this.layer].points.gte(11) }
-    }
-    etc
-}
+    },
+
+},
 milestonePopups: false
 })
