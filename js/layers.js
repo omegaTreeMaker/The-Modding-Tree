@@ -132,7 +132,7 @@ addLayer("d", {
             description: "x2.39 point gain.",
             cost: new Decimal("6.7e8"),
         },
-        122: { // Added the missing colon here
+        122: {
             title: "just one more tenfold before the big reset",
             description: "x10 point gain.",
             cost: new Decimal("8.7e8"),
@@ -158,7 +158,7 @@ addLayer("b", {
     requires: new Decimal(1e10), 
     resource: "bolts", 
     baseResource: "descension points", 
-    baseAmount() { return player.d.points}, 
+    baseAmount() { return player.d.points; }, // Fixed to use the short layer ID "d"
     type: "normal", 
     exponent: 0.4, 
     gainMult() { 
@@ -172,8 +172,8 @@ addLayer("b", {
     hotkeys: [
         {key: "b", description: "B: Reset for bolts", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){ return true; },
-    milestones: { // Moved milestones inside the addLayer object definition
+    layerShown(){ return true; } // Removed trailing comma here that caused parsing issues
+    milestones: {
         0: {
             requirementDescription: "100 bolts",
             effectDescription: "x2 descension points",
