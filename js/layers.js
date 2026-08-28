@@ -141,7 +141,6 @@ addLayer("d", {
     layerShown(){ return true; }
 });
 
-
 addLayer("b", {
     name: "bolt", 
     symbol: "B", 
@@ -154,7 +153,7 @@ addLayer("b", {
     requires: new Decimal(1e10), 
     resource: "bolts", 
     baseResource: "descension points", 
-    baseAmount() { return player.d.points; }, // Fixed to use the short layer ID "d"
+    baseAmount() { return player.d.points; }, 
     type: "normal", 
     exponent: 0.4, 
     gainMult() { 
@@ -171,7 +170,7 @@ addLayer("b", {
     layerShown(){ return true; },
     milestones: {
         0: {
-            requirementDescription: "1 bolts",
+            requirementDescription: "1 bolt",
             effectDescription: "x2 descension points",
             done() { return player.b.points.gte(1); }
         },
@@ -182,27 +181,28 @@ addLayer("b", {
         },
         2: {
             requirementDescription: "10 bolts",
-            effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades?",
+            effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades",
             done() { return player.b.points.gte(10); }
         },
         3: {
             requirementDescription: "200 bolts",
             effectDescription: "x11 points",
-            done() { return player.b.points.gte(10); }
+            done() { return player.b.points.gte(200); } // Fixed threshold from 10 to 200
         },
     },
-    milestonePopups: false
+    milestonePopups: false, // Added comma here
     upgrades: {
-    11: {
-        title: "first",
-        description: "x4 points",
-        cost: new Decimal(5),
+        11: {
+            title: "first",
+            description: "x4 points",
+            cost: new Decimal(5),
+            unlocked() { return hasMilestone('b', 2); }, // Moved unlock condition here per upgrade
+        },
+        12: {
+            title: "deeper descending",
+            description: "x1.86 descension points",
+            cost: new Decimal(20),
+            unlocked() { return hasMilestone('b', 2); }, // Moved unlock condition here per upgrade
+        },
     },
-    12: {
-        title: "deeper descending",
-        description: "x1.86 descension points",
-        cost: new Decimal(20),
-    },
-    if (hasMilestone('b', 2)) unlocked()
-},
 });
