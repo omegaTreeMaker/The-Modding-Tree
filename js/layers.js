@@ -172,12 +172,12 @@ addLayer("b", {
         0: {
             requirementDescription: "1 bolts",
             effectDescription: "x2 descension points",
-            done() { return player[this.layer].points.gte(1); }
+            done() { return player.b.points.gte(1); }
         },
         1: {
             requirementDescription: "11 bolts",
             effectDescription: "x2.5 points, x1.5 descension points",
-            done() { return player[this.layer].points.gte(11); }
+            done() { return player.b.points.gte(11); }
         },
         2: {
             requirementDescription: "69 bolts",
