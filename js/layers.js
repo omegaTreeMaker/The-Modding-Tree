@@ -185,5 +185,5 @@ addLayer("b", {
             done() { return player[this.layer].points.gte("1e4"); }
         },
     },
-    milestonePopups: false
+    //milestonePopups: false
 });
