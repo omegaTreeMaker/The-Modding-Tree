@@ -122,13 +122,8 @@ addLayer("d", {
             description: "x3 point gain.",
             cost: new Decimal("1.6e8"),
         },
-        120: {
-            title: "variation4",
-            description: "x2.56 point gain.",
-            cost: new Decimal("3.69e8"),
-        },
         121: {
-            title: "variation5",
+            title: "variation4",
             description: "x2.39 point gain.",
             cost: new Decimal("6.7e8"),
         },
