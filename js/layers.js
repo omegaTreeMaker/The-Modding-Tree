@@ -16,7 +16,8 @@ addLayer("d", {
     gainMult() { 
         let mult = new Decimal(1)
         if (hasMilestone('b', 0)) mult = mult.times(2)
-        if (hasMilestone('b', 1)) mult = mult.times(1.5)
+        if (hasMilestone('b', 1)) mult = mult.times(2)
+        if (hasMilestone('b', 1)) mult = mult.times(1.73)
 
         return mult;
     },
@@ -53,32 +54,32 @@ addLayer("d", {
             description: "x10 point gain.",
             cost: new Decimal(100),
         },
-        16: {
+        21: {
             title: "another tenfold",
             description: "x10 point gain.",
             cost: new Decimal(200),
         },
-        17: {
+        22: {
             title: "doubler^2",
             description: "x2 point gain.",
             cost: new Decimal(1000),
         },
-        18: {
+        23: {
             title: "doubler^3",
             description: "x2 point gain.",
             cost: new Decimal(2000),
         },
-        19: {
+        24: {
             title: "doubler^4",
             description: "x2 point gain.",
             cost: new Decimal(3500),
         },
-        111: {
+        25: {
             title: "doubler.5",
             description: "x2.5 point gain.",
             cost: new Decimal(15000),
         },
-        112: {
+        31: {
             title: "synergetically",
             description: "points boosts points",
             cost: new Decimal(44444),
@@ -87,47 +88,47 @@ addLayer("d", {
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"; },
         },
-        113: {
+        32: {
             title: "tripler^3",
             description: "x3 point gain.",
             cost: new Decimal("1.75e5"),
         },
-        114: {
+        33: {
             title: "tripler^4",
             description: "x3 point gain.",
             cost: new Decimal("7e5"),
         },
-        115: {
+        34: {
             title: "one more tenfold",
             description: "x10 point gain.",
             cost: new Decimal("2.5e6"),
         },
-        116: {
+        35: {
             title: "variation",
             description: "x2.1 point gain.",
             cost: new Decimal("2.5e7"),
         },
-        117: {
+        41: {
             title: "variation2",
             description: "x2.75 point gain.",
             cost: new Decimal("4.9e7"),
         },
-        118: {
+        42: {
             title: "variation3",
             description: "x2.47 point gain.",
             cost: new Decimal("8.8e7"),
         },
-        119: {
+        43: {
             title: "tripler^5",
             description: "x3 point gain.",
             cost: new Decimal("1.6e8"),
         },
-        121: {
+        44: {
             title: "variation4",
             description: "x2.39 point gain.",
             cost: new Decimal("6.7e8"),
         },
-        122: {
+        45: {
             title: "just one more tenfold before the big reset",
             description: "x10 point gain.",
             cost: new Decimal("8.7e8"),
@@ -175,15 +176,33 @@ addLayer("b", {
             done() { return player.b.points.gte(1); }
         },
         1: {
-            requirementDescription: "11 bolts",
-            effectDescription: "x2.5 points, x1.5 descension points",
-            done() { return player.b.points.gte(11); }
+            requirementDescription: "4 bolts",
+            effectDescription: "x2.5 points, and x2 descension points again",
+            done() { return player.b.points.gte(4); }
         },
         2: {
-            requirementDescription: "69 bolts",
+            requirementDescription: "10 bolts",
             effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades?",
-            done() { return player[this.layer].points.gte(69); }
+            done() { return player.b.points.gte(10); }
+        },
+        3: {
+            requirementDescription: "200 bolts",
+            effectDescription: "x11 points",
+            done() { return player.b.points.gte(10); }
         },
     },
     milestonePopups: false
+    upgrades: {
+    11: {
+        title: "first",
+        description: "x4 points",
+        cost: new Decimal(5),
+    },
+    12: {
+        title: "deeper descending",
+        description: "x1.86 descension points",
+        cost: new Decimal(20),
+    },
+    if (hasMilestone('b', 2)) unlocked()
+},
 });
