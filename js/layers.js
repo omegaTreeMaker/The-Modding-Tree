@@ -177,7 +177,7 @@ addLayer("b", {
         0: {
             requirementDescription: "100 bolts",
             effectDescription: "x2 descension points",
-            done() { return player[this.layer].points.gte(1); }
+            done() { return player[this.layer].points.gte(100); }
         },
         1: {
             requirementDescription: "10k bolts",
