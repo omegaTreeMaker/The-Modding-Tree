@@ -132,7 +132,7 @@ addLayer("d", {
                 description: "x2.39 point gain.",
                 cost: new Decimal("6.7e8"),
         },
-                122 {
+                122: {
                 title: "just one more tenfold before the big reset",
                 description: "x10 point gain.",
                 cost: new Decimal("8.7e8"),
@@ -174,17 +174,17 @@ addLayer("b", {
     ],
     layerShown(){ return true }
     milestones: {
-    0: {
-        requirementDescription: "1 bolts",
-        effectDescription: "x2 descension points",
-        done() { return player[this.layer].points.gte(1) }
-    },
-    1: {
-        requirementDescription: "11 bolts",
-        effectDescription: "x2.5 points, x1.5 descension points",
-        done() { return player[this.layer].points.gte(11) }
-    },
+        0: {
+                requirementDescription: "1 bolts",
+                effectDescription: "x2 descension points",
+                done() { return player[this.layer].points.gte(1) }
+        },
+        1: {
+                requirementDescription: "11 bolts",
+                effectDescription: "x2.5 points, x1.5 descension points",
+                done() { return player[this.layer].points.gte(11) }
+        },
 
-},
+        },
 milestonePopups: false
 })
