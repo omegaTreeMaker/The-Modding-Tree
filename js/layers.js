@@ -170,13 +170,18 @@ addLayer("b", {
     layerShown(){ return true; },
     milestones: {
         0: {
-            requirementDescription: "100 bolts",
+            requirementDescription: "1 bolts",
             effectDescription: "x2 descension points",
             done() { return player[this.layer].points.gte(100); }
         },
         1: {
-            requirementDescription: "10k bolts",
+            requirementDescription: "11 bolts",
             effectDescription: "x2.5 points, x1.5 descension points",
+            done() { return player[this.layer].points.gte("1e4"); }
+        },
+        2: {
+            requirementDescription: "69 bolts",
+            effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades?",
             done() { return player[this.layer].points.gte("1e4"); }
         },
     },
