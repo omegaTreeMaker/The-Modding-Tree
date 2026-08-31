@@ -153,21 +153,21 @@ addLayer("d", {
         53: {
             title: "elevenfold^2",
             description: "x11 point gain.",
-            cost: new Decimal("1e13"),
+            cost: new Decimal("1e16"),
             unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
 
         },
         54: {
             title: "big points",
             description: "x25 point gain.",
-            cost: new Decimal("1e15"),
+            cost: new Decimal("6.9e19"),
             unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
 
         },
         55: {
             title: "'tiny bit less than big' points",
             description: "x23 point gain.",
-            cost: new Decimal("4.04e17"),
+            cost: new Decimal("4.04e24"),
             unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
 
         },
