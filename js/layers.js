@@ -236,6 +236,16 @@ addLayer("b", {
             requirementDescription: "777 bolts",
             effectDescription: "x16 points",
             done() { return player.b.points.gte(777); }
+        },  
+        6: {
+            requirementDescription: "5,000 bolts",
+            effectDescription: "x15 points",
+            done() { return player.b.points.gte(5000); }
+        },  
+        7: {
+            requirementDescription: "69,000 bolts",
+            effectDescription: "x12 points",
+            done() { return player.b.points.gte("6.9e4"); }
         }, 
     },
     milestonePopups: false, // Added comma here
