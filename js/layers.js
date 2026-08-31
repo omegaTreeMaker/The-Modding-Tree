@@ -271,13 +271,13 @@ addLayer("b", {
         14: {
             title: "synergeticallier",
             description: "point synergy is slightly stronger",
-            cost: new Decimal(1000),
+            cost: new Decimal(2500),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         15: {
             title: "synergeticallierly",
             description: "point synergy is more slightly stronger",
-            cost: new Decimal(2200),
+            cost: new Decimal(25000),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
     },
