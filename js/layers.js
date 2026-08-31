@@ -17,7 +17,8 @@ addLayer("d", {
         let mult = new Decimal(1)
         if (hasMilestone('b', 0)) mult = mult.times(2)
         if (hasMilestone('b', 1)) mult = mult.times(2)
-        if (hasMilestone('b', 1)) mult = mult.times(1.73)
+        if (hasMilestone('b', 3)) mult = mult.times(1.73)
+        if (hasUpgrade('b', 12)) mult = mult.times(1.86)
 
         return mult;
     },
@@ -84,6 +85,8 @@ addLayer("d", {
             description: "points boosts points",
             cost: new Decimal(44444),
             effect() {
+                if (hasUpgrade('b', 15)) return player.points.add(1).pow(0.1095);
+                if (hasUpgrade('b', 14)) return player.points.add(1).pow(0.105);
                 return player.points.add(1).pow(0.1);
             },
             effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"; },
@@ -133,6 +136,41 @@ addLayer("d", {
             description: "x10 point gain.",
             cost: new Decimal("8.7e8"),
         },
+        51: {
+            title: "descension expansion",
+            description: "x3.45 point gain.",
+            cost: new Decimal("2.5e10"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        52: {
+            title: "elevenfold",
+            description: "x11 point gain.",
+            cost: new Decimal("2e11"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        53: {
+            title: "elevenfold^2",
+            description: "x11 point gain.",
+            cost: new Decimal("1e13"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        54: {
+            title: "big points",
+            description: "x25 point gain.",
+            cost: new Decimal("1e15"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        55: {
+            title: "'tiny bit less than big' points",
+            description: "x23 point gain.",
+            cost: new Decimal("4.04e17"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
     },
     row: 0, 
     hotkeys: [
@@ -176,33 +214,56 @@ addLayer("b", {
         },
         1: {
             requirementDescription: "4 bolts",
-            effectDescription: "x2.5 points, and x2 descension points again",
+            effectDescription: "x2.5 points, and x2 descension points again and unlock more descension upgrades",
             done() { return player.b.points.gte(4); }
         },
         2: {
+            requirementDescription: "5 bolts",
+            effectDescription: "x7.77 points",
+            done() { return player.b.points.gte(5); }
+        },
+        3: {
             requirementDescription: "10 bolts",
             effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades",
             done() { return player.b.points.gte(10); }
         },
-        3: {
+        4: {
             requirementDescription: "200 bolts",
             effectDescription: "x11 points",
-            done() { return player.b.points.gte(200); } // Fixed threshold from 10 to 200
-        },
+            done() { return player.b.points.gte(200); }
+        }, 
     },
     milestonePopups: false, // Added comma here
     upgrades: {
         11: {
-            title: "first",
-            description: "x4 points",
+            title: 'bolt upgrade 1',
+            description: "x3.33 points",
             cost: new Decimal(5),
-            unlocked() { return hasMilestone('b', 2); }, // Moved unlock condition here per upgrade
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         12: {
-            title: "deeper descending",
+            title: "descension depth",
             description: "x1.86 descension points",
-            cost: new Decimal(20),
-            unlocked() { return hasMilestone('b', 2); }, // Moved unlock condition here per upgrade
+            cost: new Decimal(9),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        13: {
+            title: "bolted points",
+            description: "x4 points",
+            cost: new Decimal(16),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        14: {
+            title: "synergeticallier",
+            description: "point synergy is slightly stronger",
+            cost: new Decimal(27),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        15: {
+            title: "synergeticallierly",
+            description: "point synergy is more slightly stronger",
+            cost: new Decimal(53),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
     },
 });

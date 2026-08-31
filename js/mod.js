@@ -62,9 +62,17 @@ function getPointGen() {
 	if (hasUpgrade('d', 43)) gain = gain.times(3)
 	if (hasUpgrade('d', 44)) gain = gain.times(2.39)
 	if (hasUpgrade('d', 45)) gain = gain.times(10)
+	if (hasUpgrade('d', 51)) gain = gain.times(3.45)
+	if (hasUpgrade('d', 52)) gain = gain.times(11)
+	if (hasUpgrade('d', 53)) gain = gain.times(11)
+	if (hasUpgrade('d', 54)) gain = gain.times(25)
+	if (hasUpgrade('d', 55)) gain = gain.times(23)
     if (hasMilestone("b",1)) gain = gain.times(2.5)
-    if (hasMilestone("b",2)) gain = gain.times(2)
-    if (hasMilestone("b",3)) gain = gain.times(11)
+    if (hasMilestone("b",2)) gain = gain.times(7.77)
+    if (hasMilestone("b",3)) gain = gain.times(2)
+    if (hasMilestone("b",4)) gain = gain.times(11)
+	if (hasUpgrade('b', 11)) gain = gain.times(3.33)
+	if (hasUpgrade('b', 13)) gain = gain.times(4)
 
 return gain
 }
@@ -79,7 +87,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.points.gte(new Decimal("e69696996966996696969696969696969"))
 }
 
 
