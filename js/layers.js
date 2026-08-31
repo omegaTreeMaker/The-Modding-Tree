@@ -146,7 +146,7 @@ addLayer("d", {
         52: {
             title: "elevenfold",
             description: "x11 point gain.",
-            cost: new Decimal("2e11"),
+            cost: new Decimal("2e12"),
             unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
 
         },
