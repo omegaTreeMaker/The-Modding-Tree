@@ -223,14 +223,19 @@ addLayer("b", {
             done() { return player.b.points.gte(5); }
         },
         3: {
-            requirementDescription: "10 bolts",
+            requirementDescription: "69 bolts",
             effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades",
-            done() { return player.b.points.gte(10); }
+            done() { return player.b.points.gte(69); }
         },
         4: {
-            requirementDescription: "200 bolts",
+            requirementDescription: "235 bolts",
             effectDescription: "x11 points",
-            done() { return player.b.points.gte(200); }
+            done() { return player.b.points.gte(235); }
+        }, 
+        5: {
+            requirementDescription: "777 bolts",
+            effectDescription: "x16 points",
+            done() { return player.b.points.gte(777); }
         }, 
     },
     milestonePopups: false, // Added comma here
@@ -238,31 +243,31 @@ addLayer("b", {
         11: {
             title: 'bolt upgrade 1',
             description: "x3.33 points",
-            cost: new Decimal(5),
+            cost: new Decimal(120),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         12: {
             title: "descension depth",
             description: "x1.86 descension points",
-            cost: new Decimal(9),
+            cost: new Decimal(275),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         13: {
             title: "bolted points",
             description: "x4 points",
-            cost: new Decimal(16),
+            cost: new Decimal(400),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         14: {
             title: "synergeticallier",
             description: "point synergy is slightly stronger",
-            cost: new Decimal(27),
+            cost: new Decimal(1000),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         15: {
             title: "synergeticallierly",
             description: "point synergy is more slightly stronger",
-            cost: new Decimal(53),
+            cost: new Decimal(2200),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
     },
