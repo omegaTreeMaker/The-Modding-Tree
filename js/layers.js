@@ -267,3 +267,15 @@ addLayer("b", {
         },
     },
 });
+
+// automation purposes (automates n-x upgrades when milestone is acquired)
+/*
+automate() {
+    for (let x = 11; x <= 13; x++) {
+        if (canAffordUpgrade("p", x) && !hasUpgrade("p", x)) {
+            buyUpgrade("p", x);
+        }
+    }
+}
+
+*/
