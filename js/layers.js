@@ -306,7 +306,7 @@ automate() {
 addLayer("i", {
     name: "implosion", 
     symbol: "I", 
-    position: 1, 
+    position: 2, 
     startData() { return {
         unlocked: true,
         points: new Decimal(0),
