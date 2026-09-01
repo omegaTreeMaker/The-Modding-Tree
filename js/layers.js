@@ -289,7 +289,7 @@ addLayer("b", {
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         22: {
-            title: "point doulberdoublerdoublerdoubler",
+            title: "point doudoudoudoubler",
             description: "x2x2x2x2 point gain.",
             cost: new Decimal("3e5"),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
@@ -325,7 +325,7 @@ automate() {
     }
 }
 
-*/
+*///make implosions gain = instead of +
 
 addLayer("i", {
     name: "implosion", 
@@ -341,7 +341,7 @@ addLayer("i", {
     baseResource: "points",  
     baseAmount() { return player.points }, 
     type: "normal", 
-    exponent: .032, 
+    exponent: .097, 
     gainMult() { 
         //let mult = new Decimal(1)
 
