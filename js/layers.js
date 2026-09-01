@@ -19,6 +19,8 @@ addLayer("d", {
         if (hasMilestone('b', 1)) mult = mult.times(2)
         if (hasMilestone('b', 3)) mult = mult.times(1.73)
         if (hasUpgrade('b', 12)) mult = mult.times(1.86)
+        if (hasUpgrade('i', 14)) mult = mult.times(1.75)
+        if (hasUpgrade('i', 15)) mult = mult.times(2.5)
 
         return mult;
     },
@@ -315,7 +317,7 @@ addLayer("i", {
     baseResource: "points",  
     baseAmount() { return player.points }, 
     type: "normal", 
-    exponent: .1, 
+    exponent: .032, 
     gainMult() { 
         let mult = new Decimal(1)
 
@@ -324,18 +326,32 @@ addLayer("i", {
     gainExp() { 
         return new Decimal(1);
     },
-    buyables: {
+    upgrades: {
     11: {
-        //let x = Decimal(1)
-        cost(x) { return new Decimal(1).mul(x) },
-        display() { return "x1.5 more point gain." },
-        canAfford() { return player[this.layer].points.gte(this.cost()) },
-        //effect()
-        buyMax() {
-            player[this.layer].points = player[this.layer].points.sub(this.cost())
-            setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+            title: "point implosion",
+            description: "x2.4 point gain.",
+            cost: new Decimal("1.5"),
         },
-    },
+    12: {
+            title: "point implosion^2",
+            description: "x2.4 point gain.",
+            cost: new Decimal("5"),
+        },
+    13: {
+            title: "point implosion^3",
+            description: "x2.4 point gain.",
+            cost: new Decimal("13.75"),
+        },
+    14: {
+            title: "implosion depth",
+            description: "x1.75 descension point gain.",
+            cost: new Decimal("55"),
+        },
+    15: {
+            title: "implosion descent",
+            description: "x2.5 descension point gain.",
+            cost: new Decimal("675"),
+        },
 }
     row: 0, 
     hotkeys: [
