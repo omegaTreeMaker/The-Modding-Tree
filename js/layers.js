@@ -319,9 +319,9 @@ addLayer("i", {
     type: "normal", 
     exponent: .032, 
     gainMult() { 
-        let mult = new Decimal(1)
+        //let mult = new Decimal(1)
 
-        return mult;
+        return new Decimal(1);
     },
     gainExp() { 
         return new Decimal(1);
@@ -352,7 +352,7 @@ addLayer("i", {
             description: "x2.5 descension point gain.",
             cost: new Decimal("675"),
         },
-}
+},
     row: 1, 
     hotkeys: [
         //{key: "i", description: "I: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
