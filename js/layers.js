@@ -357,7 +357,7 @@ addLayer("i", {
     11: {
             title: "point implosion",
             description: "x2.4 point gain.",
-            cost: new Decimal("1.5"),
+            cost: new Decimal("1"),
         },
     12: {
             title: "point implosion^2",
