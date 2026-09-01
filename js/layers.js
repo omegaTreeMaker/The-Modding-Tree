@@ -336,7 +336,7 @@ addLayer("i", {
         points: new Decimal(0),
     }},
     color: "#840035",
-    requires: new Decimal("1e37"), 
+    requires: new Decimal("1e35"), 
     resource: "implosions", 
     baseResource: "points",  
     baseAmount() { return player.points }, 
