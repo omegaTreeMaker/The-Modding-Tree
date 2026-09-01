@@ -19,9 +19,11 @@ let VERSION = {
 let changelog = `<h1>Changelog:</h1><br>
 	<h3>v0.0</h3><br>
 		- Added points.<br>
-		- Added descension.`
+		- Added descension.
+		- Added bolts.
+		- Added implosion.`
 
-let winText = `Congratulations! You have reached the end and beaten this game, for now, or forever`
+let winText = `Congratulations! You have reached the end and beaten this game, for now, or maybe forever`
 
 // If you add new functions anywhere inside of a layer, and those functions have an effect when called, add them here.
 // (The ones here are examples, all official functions are already taken care of)
