@@ -306,7 +306,7 @@ automate() {
 addLayer("i", {
     name: "implosion", 
     symbol: "I", 
-    position: 2, 
+    position: 1, 
     startData() { return {
         unlocked: true,
         points: new Decimal(0),
@@ -353,7 +353,7 @@ addLayer("i", {
             cost: new Decimal("675"),
         },
 }
-    row: 0, 
+    row: 1, 
     hotkeys: [
         //{key: "i", description: "I: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
