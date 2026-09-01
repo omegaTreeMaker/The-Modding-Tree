@@ -284,8 +284,32 @@ addLayer("b", {
         },
         21: {
             title: "new unlock!!",
-            description: "unlock implosions",
+            description: "x10 point gain and unlock implosions",
             cost: new Decimal("1.5e5"),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        22: {
+            title: "point doulberdoublerdoublerdoubler",
+            description: "x2x2x2x2 point gain.",
+            cost: new Decimal("3e5"),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        23: {
+            title: "extra descent",
+            description: "x2 descension point gain.",
+            cost: new Decimal("7e5"),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        24: {
+            title: "point boost #34",
+            description: "x13.3 point gain.",
+            cost: new Decimal("2.2e6"),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        25: {
+            title: "bigg point boost",
+            description: "x20 point gain.",
+            cost: new Decimal("6.7e6"),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
     },

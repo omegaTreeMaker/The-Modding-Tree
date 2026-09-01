@@ -76,6 +76,7 @@ function getPointGen() {
     if (hasMilestone("b",5)) gain = gain.times(16)
 	if (hasUpgrade('b', 11)) gain = gain.times(3.33)
 	if (hasUpgrade('b', 13)) gain = gain.times(4)
+	if (hasUpgrade('b', 21)) gain = gain.times(10)
 	if (hasUpgrade('i', 11)) gain = gain.times(2.4)
 	if (hasUpgrade('i', 12)) gain = gain.times(2.4)
 	if (hasUpgrade('i', 13)) gain = gain.times(2.4)
