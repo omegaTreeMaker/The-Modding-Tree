@@ -350,6 +350,9 @@ addLayer("i", {
     gainExp() { 
         return new Decimal(1);
     },
+    onPrestige(gain) {
+        player[this.layer].points = new Decimal(0);
+    },
     upgrades: {
     11: {
             title: "point implosion",
