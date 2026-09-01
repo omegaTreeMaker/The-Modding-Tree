@@ -85,7 +85,7 @@ addLayer("d", {
             description: "points boosts points",
             cost: new Decimal(44444),
             effect() {
-                if (hasUpgrade('b', 15)) return player.points.add(1).pow(0.1095);
+                if (hasUpgrade('b', 15)) return player.points.add(1).pow(0.11);
                 if (hasUpgrade('b', 14)) return player.points.add(1).pow(0.105);
                 return player.points.add(1).pow(0.1);
             },
@@ -205,7 +205,7 @@ addLayer("b", {
     hotkeys: [
         {key: "b", description: "B: Reset for bolts", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
-    layerShown(){ return true; },
+    layerShown(){ return (hasUpgrade('d', 45)) ||player.b.points.gt(0); },
     milestones: {
         0: {
             requirementDescription: "1 bolt",
@@ -219,32 +219,32 @@ addLayer("b", {
         },
         2: {
             requirementDescription: "5 bolts",
-            effectDescription: "x7.77 points",
+            effectDescription: "x7.77 point gain.",
             done() { return player.b.points.gte(5); }
         },
         3: {
             requirementDescription: "69 bolts",
-            effectDescription: "x2 points, x1.73 descension points, unlock bolt upgrades",
+            effectDescription: "x2 point gain, x1.73 descension points, unlock bolt upgrades",
             done() { return player.b.points.gte(69); }
         },
         4: {
             requirementDescription: "235 bolts",
-            effectDescription: "x11 points",
+            effectDescription: "x11 point gain.",
             done() { return player.b.points.gte(235); }
         }, 
         5: {
             requirementDescription: "777 bolts",
-            effectDescription: "x16 points",
+            effectDescription: "x16 point gain.",
             done() { return player.b.points.gte(777); }
         },  
         6: {
             requirementDescription: "5,000 bolts",
-            effectDescription: "x15 points",
+            effectDescription: "x15 point gain.",
             done() { return player.b.points.gte(5000); }
         },  
         7: {
             requirementDescription: "69,000 bolts",
-            effectDescription: "x12 points",
+            effectDescription: "x12 point gain.",
             done() { return player.b.points.gte("6.9e4"); }
         }, 
     },
@@ -252,19 +252,19 @@ addLayer("b", {
     upgrades: {
         11: {
             title: 'bolt upgrade 1',
-            description: "x3.33 points",
+            description: "x3.33 point gain.",
             cost: new Decimal(120),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         12: {
             title: "descension depth",
-            description: "x1.86 descension points",
+            description: "x1.86 descension point gain.",
             cost: new Decimal(275),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
         13: {
             title: "bolted points",
-            description: "x4 points",
+            description: "x4 point gain.",
             cost: new Decimal(400),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
@@ -278,6 +278,12 @@ addLayer("b", {
             title: "synergeticallierly",
             description: "point synergy is more slightly stronger",
             cost: new Decimal(25000),
+            unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
+        },
+        21: {
+            title: "new unlock!!",
+            description: "unlock implosions",
+            cost: new Decimal("1.5e5"),
             unlocked() { return hasMilestone('b', 3); }, // Moved unlock condition here per upgrade
         },
     },
@@ -294,3 +300,46 @@ automate() {
 }
 
 */
+
+addLayer("i", {
+    name: "implosion", 
+    symbol: "I", 
+    position: 1, 
+    startData() { return {
+        unlocked: true,
+        points: new Decimal(0),
+    }},
+    color: "#840035",
+    requires: new Decimal("1e37"), 
+    resource: "implosions", 
+    baseResource: "points",  
+    baseAmount() { return player.points }, 
+    type: "normal", 
+    exponent: 1.5, 
+    gainMult() { 
+        let mult = new Decimal(1)
+
+        return mult;
+    },
+    gainExp() { 
+        return new Decimal(1);
+    },
+    buyables: {
+    11: {
+        //let x = Decimal(1)
+        cost(x) { return new Decimal(1).mul(x) },
+        display() { return "x1.5 more point gain." },
+        canAfford() { return player[this.layer].points.gte(this.cost()) },
+        //effect()
+        buyMax() {
+            player[this.layer].points = player[this.layer].points.sub(this.cost())
+            setBuyableAmount(this.layer, this.id, getBuyableAmount(this.layer, this.id).add(1))
+        },
+    },
+}
+    row: 0, 
+    hotkeys: [
+        //{key: "i", description: "I: Reset for descension points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
+    ],
+    layerShown(){ return (hasUpgrade('b',21)); }
+});
