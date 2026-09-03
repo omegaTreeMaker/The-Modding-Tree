@@ -356,8 +356,13 @@ addLayer("i", {
     upgrades: {
     11: {
             title: "point implosion",
-            description: "x2.4 point gain.",
+            description: "x2.4 point gain and implosions boosts point gain",
             cost: new Decimal("1"),
+            effect() {
+                return player[this.layer].points.add(1).pow(0.3);
+            },
+            effectDisplay() { return format(upgradeEffect(this.layer, this.id))+"x"; },
+        },
         },
     12: {
             title: "point implosion^2",
