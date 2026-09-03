@@ -173,6 +173,41 @@ addLayer("d", {
             unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
 
         },
+        61: {
+            title: "point a1",
+            description: "x10.2 point gain.",
+            cost: new Decimal("1e28"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        62: {
+            title: "point a2",
+            description: "x10.5 point gain.",
+            cost: new Decimal("7.9e31"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        63: {
+            title: "point a3",
+            description: "x10.72 point gain.",
+            cost: new Decimal("1e35"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        64: {
+            title: "point a4",
+            description: "x10.82 point gain.",
+            cost: new Decimal("1e39"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
+        65: {
+            title: "point a5",
+            description: "x10.96 point gain.",
+            cost: new Decimal("1e45"),
+            unlocked() { return hasMilestone('b', 1); }, // Moved unlock condition here per upgrade
+
+        },
     },
     row: 0, 
     hotkeys: [
@@ -249,8 +284,18 @@ addLayer("b", {
             effectDescription: "x12 point gain.",
             done() { return player.b.points.gte("6.9e4"); }
         }, 
+        8: {
+            requirementDescription: "1,000,000 bolts",
+            effectDescription: "x40 point gain.",
+            done() { return player.b.points.gte("1e6"); }
+        }, 
+        9: {
+            requirementDescription: "800,000,000 bolts",
+            effectDescription: "x80 point gain.",
+            done() { return player.b.points.gte("8e8"); }
+        }, 
     },
-    milestonePopups: false, // Added comma here
+    milestonePopups: false, //
     upgrades: {
         11: {
             title: 'bolt upgrade 1',
@@ -329,7 +374,7 @@ automate() {
 
 addLayer("i", {
     name: "implosion", 
-    symbol: "I", 
+    symbol: "i", 
     position: 1, 
     startData() { return {
         unlocked: true,
