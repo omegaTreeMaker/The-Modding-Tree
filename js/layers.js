@@ -1,6 +1,6 @@
 addLayer("d", {
     name: "descension", 
-    symbol: "D", 
+    symbol: "d", 
     position: 0, 
     startData() { return {
         unlocked: true,
@@ -183,7 +183,7 @@ addLayer("d", {
 
 addLayer("b", {
     name: "bolt", 
-    symbol: "B", 
+    symbol: "b", 
     position: 0, 
     startData() { return {
         unlocked: true,
